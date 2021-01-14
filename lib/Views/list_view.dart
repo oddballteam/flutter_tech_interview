@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:tech_interview/Store/marvel_store.dart';
 import 'package:provider/provider.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key key}) : super(key: key);
+class ListViewPage extends StatefulWidget {
+  const ListViewPage({Key key}) : super(key: key);
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _ListViewPageState createState() => _ListViewPageState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _ListViewPageState extends State<ListViewPage> {
   var hasBeenSet = false;
 
   @override
@@ -25,6 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
     });
 
     return Scaffold(
+      appBar: AppBar(),
       body: Center(
         child: Container(
           child: marvelStore.characters.data == null
@@ -33,7 +34,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   itemCount: marvelStore.characters.data.count,
                   itemBuilder: (BuildContext context, int index) {
                     return ListTile(
-                      leading: Image.network(marvelStore.characters.data.results[index].thumbnail.path),
                       title: Text(marvelStore.characters.data.results[index].name ?? "Unknown Name"),
                     );
                   },
