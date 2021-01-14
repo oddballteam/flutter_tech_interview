@@ -26,6 +26,10 @@ samples, guidance on mobile development, and a full API reference.
 
 This project is designed to test a canidates Flutter/Dart knowledge. The project is designed around the [Marvel Api](https://developer.marvel.com) and requires the public and private keys generated for the canidate to access the API. 
 
+## Model
+
+Do to the complexity of the Marvel API Characters and Character models, we have included the models ahead of time for the canidate to use. Make use of them how you see fit.
+
 ### Completion Criteria
 
 1. Successfully make a call to the Marvel API and return a list of characters
@@ -33,6 +37,6 @@ This project is designed to test a canidates Flutter/Dart knowledge. The project
 1. Create a list view that displays the list of characters returned
 1. Being able to tap on an item in the list and see detail new view
 1. Making a second call to get the characters detail information
-1. Utilizing provider as a state managment solution
+1. Utilizing Provider or other state managment solution
 1. Possible writing of widget tests to validate widgets and views
 
