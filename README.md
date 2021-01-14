@@ -1,10 +1,16 @@
-# tech_interview
+# Technical Interview
 
-A new Flutter project.
+Mobile position Flutter intervew project for Oddball
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+### Requirements for running the project
+
+1. An IDE or Editor to run Flutter in (VSCode or Android Studio)
+1. Flutter plugin installed and configured
+1. iOS or Android Simulator to view application
+1. An set of Marvel API keys. They require a user to have a public and private key, as well as creating a hash to send to their API. 
+
+Run `flutter doctor` after the install and configuation to make sure that everything is configured correctly and Flutter should run. If you install Flutter through VScode extensions is should include all the Dart supporting installations as well. 
 
 A few resources to get you started if this is your first Flutter project:
 
@@ -14,3 +20,19 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+
+## Requirements 
+
+This project is designed to test a canidates Flutter/Dart knowledge. The project is designed around the [Marvel Api](https://developer.marvel.com) and requires the public and private keys generated for the canidate to access the API. 
+
+### Completion Criteria
+
+1. Successfully make a call to the Marvel API and return a list of characters
+1. Make sure the first page navigates to the list page correctly
+1. Create a list view that displays the list of characters returned
+1. Being able to tap on an item in the list and see detail new view
+1. Making a second call to get the characters detail information
+1. Utilizing provider as a state managment solution
+1. Possible writing of widget tests to validate widgets and views
+

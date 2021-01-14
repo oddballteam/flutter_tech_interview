@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tech_interview/Store/marvel_store.dart';
 import 'package:provider/provider.dart';
+import 'package:tech_interview/Views/detail_view.dart';
 
 class ListViewPage extends StatefulWidget {
   const ListViewPage({Key key}) : super(key: key);
@@ -35,6 +36,14 @@ class _ListViewPageState extends State<ListViewPage> {
                   itemBuilder: (BuildContext context, int index) {
                     return ListTile(
                       title: Text(marvelStore.characters.data.results[index].name ?? "Unknown Name"),
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DetailView(
+                            characterId: marvelStore.characters.data.results[index].id,
+                          ),
+                        ),
+                      ),
                     );
                   },
                   separatorBuilder: (BuildContext context, int index) => Divider(),
