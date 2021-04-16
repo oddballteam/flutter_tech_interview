@@ -19,13 +19,13 @@ class MarvelCharactersList {
     this.etag,
   });
 
-  int code;
-  String status;
-  String copyright;
-  String attributionText;
-  String attributionHtml;
-  Data data;
-  String etag;
+  int? code;
+  String? status;
+  String? copyright;
+  String? attributionText;
+  String? attributionHtml;
+  Data? data;
+  String? etag;
 
   factory MarvelCharactersList.fromJson(Map<String, dynamic> json) => MarvelCharactersList(
         code: json["code"],
@@ -43,7 +43,7 @@ class MarvelCharactersList {
         "copyright": copyright,
         "attributionText": attributionText,
         "attributionHTML": attributionHtml,
-        "data": data.toJson(),
+        "data": data!.toJson(),
         "etag": etag,
       };
 }
@@ -57,11 +57,11 @@ class Data {
     this.results,
   });
 
-  int offset;
-  int limit;
-  int total;
-  int count;
-  List<Result> results;
+  int? offset;
+  int? limit;
+  int? total;
+  int? count;
+  List<Result>? results;
 
   factory Data.fromJson(Map<String, dynamic> json) => Data(
         offset: json["offset"],
@@ -76,7 +76,7 @@ class Data {
         "limit": limit,
         "total": total,
         "count": count,
-        "results": List<dynamic>.from(results.map((x) => x.toJson())),
+        "results": List<dynamic>.from(results!.map((x) => x.toJson())),
       };
 }
 
@@ -95,17 +95,17 @@ class Result {
     this.series,
   });
 
-  int id;
-  String name;
-  String description;
-  String modified;
-  String resourceUri;
-  List<Url> urls;
-  Thumbnail thumbnail;
-  Comics comics;
-  Stories stories;
-  Comics events;
-  Comics series;
+  int? id;
+  String? name;
+  String? description;
+  String? modified;
+  String? resourceUri;
+  List<Url>? urls;
+  Thumbnail? thumbnail;
+  Comics? comics;
+  Stories? stories;
+  Comics? events;
+  Comics? series;
 
   factory Result.fromJson(Map<String, dynamic> json) => Result(
         id: json["id"],
@@ -127,12 +127,12 @@ class Result {
         "description": description,
         "modified": modified,
         "resourceURI": resourceUri,
-        "urls": List<dynamic>.from(urls.map((x) => x.toJson())),
-        "thumbnail": thumbnail.toJson(),
-        "comics": comics.toJson(),
-        "stories": stories.toJson(),
-        "events": events.toJson(),
-        "series": series.toJson(),
+        "urls": List<dynamic>.from(urls!.map((x) => x.toJson())),
+        "thumbnail": thumbnail!.toJson(),
+        "comics": comics!.toJson(),
+        "stories": stories!.toJson(),
+        "events": events!.toJson(),
+        "series": series!.toJson(),
       };
 }
 
@@ -144,10 +144,10 @@ class Comics {
     this.items,
   });
 
-  int available;
-  int returned;
-  String collectionUri;
-  List<ComicsItem> items;
+  int? available;
+  int? returned;
+  String? collectionUri;
+  List<ComicsItem>? items;
 
   factory Comics.fromJson(Map<String, dynamic> json) => Comics(
         available: json["available"],
@@ -160,7 +160,7 @@ class Comics {
         "available": available,
         "returned": returned,
         "collectionURI": collectionUri,
-        "items": List<dynamic>.from(items.map((x) => x.toJson())),
+        "items": List<dynamic>.from(items!.map((x) => x.toJson())),
       };
 }
 
@@ -170,8 +170,8 @@ class ComicsItem {
     this.name,
   });
 
-  String resourceUri;
-  String name;
+  String? resourceUri;
+  String? name;
 
   factory ComicsItem.fromJson(Map<String, dynamic> json) => ComicsItem(
         resourceUri: json["resourceURI"],
@@ -192,10 +192,10 @@ class Stories {
     this.items,
   });
 
-  int available;
-  int returned;
-  String collectionUri;
-  List<StoriesItem> items;
+  int? available;
+  int? returned;
+  String? collectionUri;
+  List<StoriesItem>? items;
 
   factory Stories.fromJson(Map<String, dynamic> json) => Stories(
         available: json["available"],
@@ -208,7 +208,7 @@ class Stories {
         "available": available,
         "returned": returned,
         "collectionURI": collectionUri,
-        "items": List<dynamic>.from(items.map((x) => x.toJson())),
+        "items": List<dynamic>.from(items!.map((x) => x.toJson())),
       };
 }
 
@@ -219,9 +219,9 @@ class StoriesItem {
     this.type,
   });
 
-  String resourceUri;
-  String name;
-  String type;
+  String? resourceUri;
+  String? name;
+  String? type;
 
   factory StoriesItem.fromJson(Map<String, dynamic> json) => StoriesItem(
         resourceUri: json["resourceURI"],
@@ -242,8 +242,8 @@ class Thumbnail {
     this.extension,
   });
 
-  String path;
-  String extension;
+  String? path;
+  String? extension;
 
   factory Thumbnail.fromJson(Map<String, dynamic> json) => Thumbnail(
         path: json["path"],
@@ -262,8 +262,8 @@ class Url {
     this.url,
   });
 
-  String type;
-  String url;
+  String? type;
+  String? url;
 
   factory Url.fromJson(Map<String, dynamic> json) => Url(
         type: json["type"],

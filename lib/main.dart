@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:tech_interview/Store/marvel_store.dart';
+// import 'package:tech_interview/Store/marvel_store.dart';
 import 'package:tech_interview/Views/home_view.dart';
 
 void main() {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => MarvelStore()),
+        // ChangeNotifierProvider(create: (_) => MarvelStore()),
       ],
       child: MyApp(),
     ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class DetailView extends StatelessWidget {
-  DetailView({Key key}) : super(key: key);
+  DetailView({Key? key}) : super(key: key);
 
   Widget build(BuildContext context) {
     return Scaffold(
