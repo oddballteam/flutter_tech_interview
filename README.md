@@ -24,6 +24,24 @@ samples, guidance on mobile development, and a full API reference.
 
 This project is designed to test a canidates Flutter/Dart knowledge. The project is designed around the [Marvel Api](https://developer.marvel.com) and requires the public and private keys generated for the canidate to access the API.
 
+The Marvel API requires a hash based on a time stamp, the public key, and the private key. Here is a quick way to set the parameters for that call:
+
+```
+    Map<String, String> setQueryParams(int limit) {
+        var ts = DateTime.now().toString();
+        var hash = crypto.md5.convert(utf8.encode(ts + "Your Private Key" + "Your Public Key")).toString();
+
+        final queryParams = {
+        "apikey": "Your Public Key"
+        "ts": ts,
+        "hash": hash,
+        "limit": "$limit",
+        };
+
+        return queryParams;
+    }
+```
+
 ## Model
 
 Do to the complexity of the Marvel API Characters and Character models, we have included the models ahead of time for the canidate to use. Make use of them how you see fit.
