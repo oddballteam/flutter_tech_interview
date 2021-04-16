@@ -4,12 +4,12 @@
 
 import 'dart:convert';
 
-CharactersList charactersFromJson(String str) => CharactersList.fromJson(json.decode(str));
+MarvelCharactersList charactersFromJson(String str) => MarvelCharactersList.fromJson(json.decode(str));
 
-String charactersToJson(CharactersList data) => json.encode(data.toJson());
+String charactersToJson(MarvelCharactersList data) => json.encode(data.toJson());
 
-class CharactersList {
-  CharactersList({
+class MarvelCharactersList {
+  MarvelCharactersList({
     this.code,
     this.status,
     this.copyright,
@@ -27,7 +27,7 @@ class CharactersList {
   Data data;
   String etag;
 
-  factory CharactersList.fromJson(Map<String, dynamic> json) => CharactersList(
+  factory MarvelCharactersList.fromJson(Map<String, dynamic> json) => MarvelCharactersList(
         code: json["code"],
         status: json["status"],
         copyright: json["copyright"],
